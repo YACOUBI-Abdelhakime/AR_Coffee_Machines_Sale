@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends, Header
 import jwt
+import requests
 from typing import List
 
 app = FastAPI()
@@ -8,7 +9,7 @@ app = FastAPI()
 SECRET_KEY = "mysecretkey"
 
 # Define the endpoint of the CRM's API
-crm_endpoint = "https://crm.example.com/api/v1"
+crm_endpoint = "https://615f5fb4f7254d0017068109.mockapi.io/api/v1/"
 
 # Function for checking if the user has the correct role
 def check_roles(role: str = Header(None)):
@@ -60,11 +61,11 @@ async def delete_data_from_crm(path: str):
 @app.get("/customers/{customer_id}")
 async def read_customer(customer_id: int, auth_token: str = Header(None)):
     # Decode the JWT token to get the user's role
-    payload = decode_token(auth_token)
-    user_role = payload["role"]
-# Check if the user has the correct role
-    if user_role != "admin":
-        raise HTTPException(status_code=403, detail="Forbidden")
+#     payload = decode_token(auth_token)
+#     user_role = payload["role"]
+# # Check if the user has the correct role
+#     if user_role != "admin":
+#         raise HTTPException(status_code=403, detail="Forbidden")
     # Retrieve the customer from the CRM
     customer = await get_data_from_crm(f"/customers/{customer_id}")
     if customer is None:
@@ -97,12 +98,11 @@ async def update_customer(customer_id: int, customer: dict, auth_token: str = He
 @app.delete("/customers/{customer_id}")
 async def delete_customer(customer_id: int, auth_token: str = Header(None)):
     # Decode the JWT token to get the user's role
-    payload = decode_token(auth_token)
-    user_role = payload["role"]
-    # Check if the user has the correct role
-    if user_role != "admin":
-        raise HTTPException(status_code=403, detail="Forbidden")
+    # payload = decode_token(auth_token)
+    # user_role = payload["role"]
+    # # Check if the user has the correct role
+    # if user_role != "admin":
+    #     raise HTTPException(status_code=403, detail="Forbidden")
     # Delete the customer from the CRM
     await delete_data_from_crm(f"/customers/{customer_id}")
     return {"id": customer_id}
-
