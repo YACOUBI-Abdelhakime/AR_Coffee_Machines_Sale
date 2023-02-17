@@ -1,4 +1,4 @@
-ffrom fastapi import FastAPI, HTTPException, Depends, Header
+from fastapi import FastAPI, HTTPException, Depends, Header
 import jwt
 from typing import List
 
@@ -52,8 +52,8 @@ async def put_data_to_erp(path: str, data: dict):
 async def delete_data_from_erp(path: str):
     url = erp_endpoint + path
     response = requests.delete(url)
-        if response.status_code != 204:
-        raise HTTPException(status_code=response.status_code, detail=response.text)
+    if response.status_code != 204:
+            raise HTTPException(status_code=response.status_code, detail=response.text)
     return response.json()
 
 # Define the routes for the API
