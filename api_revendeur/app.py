@@ -5,7 +5,7 @@ import requests
 app = FastAPI()
 
 # Define the endpoint of the ERP's API
-erp_endpoint = "https://erp.example.com/api/v1"
+erp_endpoint = "https://615f5fb4f7254d0017068109.mockapi.io/api/v1"
 
 # Function for sending GET requests to the ERP's API
 async def get_data_from_erp(path: str):
