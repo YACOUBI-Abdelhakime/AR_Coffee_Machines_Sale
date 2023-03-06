@@ -30,7 +30,7 @@ def generate_qr_code(unique_id: str):
 @app.get("/send_qr_code/{user_id}")
 async def send_qr_code(user_id: str):
     # Retrieve user from CRM
-    user = await get_data_from_crm(f"/users/{user_id}")
+    user = await get_data_from_crm(f"/customers/{user_id}")
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
 
@@ -39,7 +39,7 @@ async def send_qr_code(user_id: str):
 
     # Send email with QR code
     sender_email = "tonkawapaye@gmail.com"
-    sender_password = "0123456789$ABC$abd"
+    sender_password = "0123456789$ABC$abc"
     receiver_email = user["email"]
     message = MIMEMultipart()
     message["From"] = sender_email
