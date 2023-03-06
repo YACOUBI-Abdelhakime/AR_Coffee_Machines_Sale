@@ -11,7 +11,7 @@ from email.mime.image import MIMEImage
 app = FastAPI()
 
 # Define the endpoint of the CRM's API
-crm_endpoint = "https://crm.example.com/api/v1"
+crm_endpoint = "https://615f5fb4f7254d0017068109.mockapi.io/api/v1"
 
 def generate_qr_code(unique_id: str):
     # Generate QR code
@@ -38,7 +38,8 @@ async def send_qr_code(user_id: str):
     qr_code = generate_qr_code(user_id)
 
     # Send email with QR code
-    sender_email = "your_email@example.com"
+    sender_email = "tonkawapaye@gmail.com"
+    sender_password = "0123456789$ABC$abd"
     receiver_email = user["email"]
     message = MIMEMultipart()
     message["From"] = sender_email
@@ -50,7 +51,7 @@ async def send_qr_code(user_id: str):
     message.attach(image)
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
-        server.login(sender_email, "your_password")
+        server.login(sender_email, sender_password)
         server.sendmail(sender_email, receiver_email, message.as_string())
 
     return {"message": "QR code sent successfully"}
