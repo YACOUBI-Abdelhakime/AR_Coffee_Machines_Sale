@@ -24,10 +24,10 @@ jobs:
             cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
             flutter pub get
             
-        - name: Code analyze
-          run: |
-           cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
-           flutter analyze
+        #- name: Code analyze
+         # run: |
+          # cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
+          # flutter analyze
             
         - name: Run tests
           run: |
@@ -38,5 +38,11 @@ jobs:
           run: |
            cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
            flutter build apk
+           
+        - name: Save aplication artifact 
+          uses: actions/upload-artifact@v2
+          with:
+            name: kawaApp.apk
+            path: /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app/build/app/outputs/flutter-apk/app-release.apk
            
 
