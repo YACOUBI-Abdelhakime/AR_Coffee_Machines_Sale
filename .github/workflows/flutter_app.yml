@@ -24,11 +24,6 @@ jobs:
             cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
             flutter pub get
             
-        #- name: Code analyze
-         # run: |
-          # cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
-          # flutter analyze
-            
         - name: Run tests
           run: |
            cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
