@@ -24,7 +24,7 @@ jobs:
         - name: Run tests
           run: |
            cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
-           flutter test 
+           flutter test
         - name: Run tests
           run: flutter build apk
         - name: Run tests
