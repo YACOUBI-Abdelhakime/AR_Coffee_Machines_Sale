@@ -1,0 +1,30 @@
+name: fastAPI_pipeline
+
+on:
+  push:
+    branches: RiadFlutterCICD
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Dir
+        run: cd ./api_revendeur
+
+      - name: Setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.1"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r api_revendeur/packages.yaml
+
+      - name: Run tests
+        run: |
+          pip install pytest
+          pytest api_revendeur/test_app_webshop.py
