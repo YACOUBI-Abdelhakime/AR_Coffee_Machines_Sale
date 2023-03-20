@@ -2,7 +2,7 @@ name: CI/CD de test Flutter
 
 on:
   push:
-    branches: master
+    branches: RiadFlutterCICD
 
 jobs:
   build:
