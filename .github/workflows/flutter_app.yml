@@ -33,7 +33,7 @@ jobs:
           run: |
            cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
            flutter build apk
-           
+            
         - name: Save aplication artifact 
           uses: actions/upload-artifact@v2
           with:
