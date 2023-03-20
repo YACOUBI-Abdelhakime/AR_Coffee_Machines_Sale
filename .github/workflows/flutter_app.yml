@@ -18,7 +18,9 @@ jobs:
           with:
             flutter-version: '3.3.10'
         - name: Get dependencies
-          run: flutter pub get
+          run: |
+            cd /mspr-paye-ton-kawa
+            flutter pub get
         - name: Run tests
           run: |
            cd /mobile_app/test
