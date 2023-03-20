@@ -8,10 +8,10 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   test('Test api to update user with correct id', () async {
     User user = User(
-        userId: "3",
+        userId: "20",
         firstName: "FirstNameTest",
         lastName: "LastNameTest",
-        email: "Email.test@gmail.com");
+        email: "Email@gmail.com");
     User? userUPdated = await updateUserApi(null, user);
 
     expect(user.userId, userUPdated?.userId);

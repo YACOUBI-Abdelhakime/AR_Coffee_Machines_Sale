@@ -8,22 +8,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v2 
-        - uses: actions/setup-java@v2
+        - uses: actions/checkout@v3
+        - uses: actions/setup-java@v3
           with:
-            java-version: '11'
+            distribution: 'zulu' 
+            java-version: '17'
+            
         - name: Set up Flutter
           uses: subosito/flutter-action@v1
           with:
-            flutter-version: '2.5.3'
+            flutter-version: '3.3.10'
+            
         - name: Get dependencies
-          run: flutter pub get
+          run: |
+            cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
+            flutter pub get
+            
         - name: Run tests
           run: |
-           cd /mobile_app/test
-           flutter test 
-        - name: Run tests
-          run: flutter build apk
-        - name: Run tests
-          run: flutter build appbundle 
+           cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
+           flutter test
+           
+        - name: Run build apk
+          run: |
+           cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
+           flutter build apk
+            
+        - name: Save aplication artifact 
+          uses: actions/upload-artifact@v2
+          with:
+            name: kawaApp.apk
+            path: /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app/build/app/outputs/flutter-apk/app-release.apk
+           
 
