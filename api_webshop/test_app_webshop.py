@@ -7,35 +7,29 @@ client = TestClient(app)
     
 # Test GET customer by ID
 def test_read_customer():
-     response = client.get("/customers/3")
+     response = client.get("/customers/99")
      assert response.status_code == 200
      assert response.json() == {
-        "createdAt": "2023-02-20T04:16:24.968Z",
-        "name": "EPSI c'est nul",
-        "username": "pire.ecole",
-        "firstName": "Alex",
-        "lastName": "Benlhaj dehbi",
-        "address": {
-            "postalCode": "EPSI TQT",
-            "city": "LILLE"
-        },
-        "profile": {
-            "firstName": "JEAN",
-            "lastName": "DUJARDIN"
-        },
-        "company": {
-            "companyName": "MSPR"
-        },
-        "id": "3",
-        "email": "email@test.com",
-        "orders": [
-        {
-        "createdAt": "2023-02-20T00:49:24.786Z",
-        "id": "53",
-        "customerId": "3"
-        }
-        ]
-    }
+    "createdAt": "2023-02-20T06:57:35.643Z",
+    "name": "Glenda Howe",
+    "username": "Ulises62",
+    "firstName": "UN PURE BG---",
+    "lastName": "changer d'écol--",
+    "address": {
+        "postalCode": "67879",
+        "city": "Baldwin Park"
+    },
+    "profile": {
+        "firstName": "Terry",
+        "lastName": "O'Conner"
+    },
+    "company": {
+        "companyName": "Crona, Raynor and Quigley"
+    },
+    "id": "99",
+    "email": "Email@aaaa.com",
+    "orders": []
+}
 
 # # Test GET non-existent customer by ID
 # def test_read_nonexistent_customer():
