@@ -23,7 +23,7 @@ jobs:
             flutter pub get
         - name: Run tests
           run: |
-           cd /mobile_app/test
+           cd /home/runner/work/mspr-paye-ton-kawa/mspr-paye-ton-kawa/mobile_app
            flutter test 
         - name: Run tests
           run: flutter build apk
