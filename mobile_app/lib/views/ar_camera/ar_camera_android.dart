@@ -13,13 +13,13 @@ import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:ar_flutter_plugin/models/ar_hittest_result.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
-class ArCamera extends StatefulWidget {
-  const ArCamera({Key? key}) : super(key: key);
+class AndroidArCamera extends StatefulWidget {
+  const AndroidArCamera({Key? key}) : super(key: key);
   @override
-  ArCameraState createState() => ArCameraState();
+  AndroidArCameraState createState() => AndroidArCameraState();
 }
 
-class ArCameraState extends State<ArCamera> {
+class AndroidArCameraState extends State<AndroidArCamera> {
   // AR variables
   ARSessionManager? arSessionManager;
   ARObjectManager? arObjectManager;

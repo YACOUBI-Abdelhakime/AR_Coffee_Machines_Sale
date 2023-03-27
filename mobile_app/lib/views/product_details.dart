@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:arcore_test/componants/drawer.dart';
 import 'package:arcore_test/controllers/product_controller.dart';
 import 'package:arcore_test/models/product.dart';
-import 'package:arcore_test/views/ar_camera.dart';
+import 'package:arcore_test/views/ar_camera/ar_camera_android.dart';
+import 'package:arcore_test/views/ar_camera/ar_camera_ios.dart';
 import 'package:arcore_test/views/home.dart';
 import 'package:arcore_test/views/login.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +91,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                             onTap: () {
                               Navigator.pushAndRemoveUntil(
                                 context,
-                                MaterialPageRoute(
-                                    builder: (context) => ArCamera()),
+                                MaterialPageRoute(builder: (context) {
+                                  return Platform.isIOS
+                                      ? IosArCamera()
+                                      : AndroidArCamera();
+                                }),
                                 navTest(true),
                               );
                             },
