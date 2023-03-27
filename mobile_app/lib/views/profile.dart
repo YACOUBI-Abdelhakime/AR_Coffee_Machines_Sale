@@ -1,14 +1,8 @@
-import 'dart:math';
-
 import 'package:arcore_test/componants/drawer.dart';
 import 'package:arcore_test/controllers/local_storage.dart';
-import 'package:arcore_test/controllers/product_controller.dart';
 import 'package:arcore_test/controllers/user_controller.dart';
-import 'package:arcore_test/models/product.dart';
 import 'package:arcore_test/models/user.dart';
 import 'package:arcore_test/shared/text_field_validators.dart';
-import 'package:arcore_test/views/ar_camera.dart';
-import 'package:arcore_test/views/home.dart';
 import 'package:arcore_test/views/login.dart';
 import 'package:flutter/material.dart';
 
