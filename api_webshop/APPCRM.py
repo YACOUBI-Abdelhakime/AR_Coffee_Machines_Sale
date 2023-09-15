@@ -39,7 +39,7 @@ async def send_qr_code(user_id: str):
 
     # Send email with QR code
     sender_email = "tonkawapaye@gmail.com"
-    sender_password = "0123456789$ABC$abc"
+    sender_password = "***"
     receiver_email = user["email"]
     message = MIMEMultipart()
     message["From"] = sender_email

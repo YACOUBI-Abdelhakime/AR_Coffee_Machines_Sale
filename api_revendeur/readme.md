@@ -12,7 +12,7 @@ Authors :   - YACOUBI Abdelhakime
 ### Create a python environment :
 
 ```bash
-python -m venv env
+python -m venv env 
 ```
 
 Run this with git bash (not windows cmd or powerShell) to use this environment
